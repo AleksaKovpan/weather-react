@@ -1,0 +1,7 @@
+.git-link {
+  color: rgb(75, 75, 231);
+}
+.git-link:hover {
+  text-decoration: underline;
+  color: blue;
+}
