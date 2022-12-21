@@ -1,6 +1,8 @@
 import React from "react";
 import "./City.css";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTemperatureThreeQuarters } from "@fortawesome/free-solid-svg-icons";
+import { faMapPin } from "@fortawesome/free-solid-svg-icons";
 
 export default function City() {
   let weatherData = {
@@ -19,7 +21,7 @@ export default function City() {
       <div className="col-sm-4">
         <div className="current-city-temp">
           <div className="city-data">
-            <i className="fa fa-map-pin" aria-hidden="true"></i>
+            <FontAwesomeIcon icon={faMapPin} />
             <span className="current-city"> {weatherData.city}</span>
             <div>
               <span className="current-month">{weatherData.month}</span>
@@ -28,10 +30,7 @@ export default function City() {
             </div>
           </div>
           <div className="current-temp">
-            <i
-              className="fa fa-temperature-three-quarters"
-              aria-hidden="true"
-            ></i>
+            <FontAwesomeIcon icon={faTemperatureThreeQuarters} />
             <span className="current-temp-value">
               {" "}
               {weatherData.temperature}
