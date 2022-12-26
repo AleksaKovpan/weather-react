@@ -10,7 +10,9 @@
   margin: 0 auto;
 }
 .wrapper {
-  background: linear-gradient(to bottom, #30cfd0 0%, #330867 100%);
+  /* background: linear-gradient(to bottom, #30cfd0 0%, #330867 100%); */
+  background-image: url(https://klike.net/uploads/posts/2022-10/1665300469_9-6.jpg);
+  opacity: 0,5;
   max-width: 800px;
   margin: 0 auto;
   padding: 20px 60px 40px 60px;
