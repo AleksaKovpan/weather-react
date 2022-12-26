@@ -12,7 +12,15 @@ export default function Footer() {
         >
           Open-source code
         </a>
-        , by Oleksandra Kovpan
+        , by{" "}
+        <a
+          href="https://soft-cactus-a32fe4.netlify.app/"
+          target="_blank"
+          className="git-link"
+          rel="noreferrer"
+        >
+          Oleksandra Kovpan
+        </a>
       </p>
     </div>
   );
