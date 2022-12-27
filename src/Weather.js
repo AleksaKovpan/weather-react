@@ -1,5 +1,4 @@
 import React from "react";
-import Search from "./Search";
 import "./Weather.css";
 import City from "./City";
 import Footer from "./Footer";
@@ -9,8 +8,7 @@ export default function Weather() {
     <div className="Weather">
       <div class="conteiner">
         <div class="wrapper">
-          <Search />
-          <img src="../images/" alt="" class="icon-unDraw" />
+         
           <City />
         </div>
         <Footer />
