@@ -4,24 +4,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTemperatureThreeQuarters } from "@fortawesome/free-solid-svg-icons";
 import { faMapPin } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import CurrentDate from "./CurrentDate";
 
 export default function City() {
-  
-  const [weatherData, setWeatherData] = useState({ ready: false});
+  const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleResponse(response) {
-    console.log(response);
+    console.log(response.data);
     setWeatherData({
       ready: true,
-      temperature: Math.round(response.data.temperature.current),
-      temperatureFeelsLike: Math.round(response.data.temperature.feels_like),
-      description: response.data.condition.description,
+      temperature: Math.round(response.data.main.temp),
+      temperatureFeelsLike: Math.round(response.data.main.feels_like),
+      description: response.data.weather[0].description,
       wind: Math.round(response.data.wind.speed),
-      humidity: response.data.temperature.humidity,
-      city: response.data.city,
-      iconUrl: response.data.condition.icon_url,
+      humidity: response.data.main.humidity,
+      city: response.data.name,
+      icon: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
+      date: new Date(response.data.dt * 1000),
     });
-    
   }
 
   if (weatherData.ready) {
@@ -40,9 +40,7 @@ export default function City() {
                 <FontAwesomeIcon icon={faMapPin} />
                 <span className="current-city"> {weatherData.city}</span>
                 <div>
-                  <span className="current-month">September</span>
-                  <span className="current-date"> 10</span> <br />
-                  <div className="current-day">Saturday</div>
+                  <CurrentDate date={weatherData.date} />
                 </div>
               </div>
               <div className="current-temp">
@@ -65,7 +63,7 @@ export default function City() {
           <div className="col-sm-4">
             {/* <img src="" alt="cloudy" className="weather-icon" /> */}
             <div className="current-icon">
-              <img src={weatherData.iconUrl} alt={weatherData.description} />
+              <img src={weatherData.icon} alt={weatherData.description} />
             </div>
             <div className="weather-description">
               {" "}
@@ -98,9 +96,9 @@ export default function City() {
       </div>
     );
   } else {
-    const apiKey = "31bftf2499ef7004af95426acdf6a3oe";
-    let city = "Kyiv";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+    const apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+    let city = "Paris";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
     return "Loading...";
   }
