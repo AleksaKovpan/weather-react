@@ -8,8 +8,7 @@ export default function Weather() {
     <div className="Weather">
       <div class="conteiner">
         <div class="wrapper">
-         
-          <City />
+          <City defaultCity ="Kyiv" />
         </div>
         <Footer />
       </div>

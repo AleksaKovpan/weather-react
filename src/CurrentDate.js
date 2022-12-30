@@ -25,12 +25,12 @@ export default function CurrentDate(props) {
     "December",
   ];
   let month = months[props.date.getMonth()];
-  let data = props.date.getDate();
+  let date = props.date.getDate();
   let day = days[props.date.getDay()];
   return (
     <div>
       <span className="current-month">{month}</span>
-      <span className="current-date"> {data}</span> <br />
+      <span className="current-date"> {date}</span> <br />
       <div className="current-day"> {day}</div>
     </div>
   );

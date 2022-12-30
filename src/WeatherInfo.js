@@ -3,7 +3,7 @@ import CurrentDate from "./CurrentDate";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTemperatureThreeQuarters } from "@fortawesome/free-solid-svg-icons";
 import { faMapPin } from "@fortawesome/free-solid-svg-icons";
-import { search } from "fontawesome";
+
 export default function WeatherInfo(props) {
     return (
       <div className="WeatherInfo">
@@ -21,13 +21,13 @@ export default function WeatherInfo(props) {
                 <FontAwesomeIcon icon={faTemperatureThreeQuarters} />
                 <span className="current-temp-value">
                   {" "}
-                  {props.weatherData.temperature}
+                  {props.data.temperature}
                 </span>
                 <span className="unit">°C</span>
                 <div className="current-temp-value-feeling">
                   feels like{" "}
                   <span className="temp-value-feeling">
-                    {props.weatherData.temperatureFeelsLike}
+                    {props.data.temperatureFeelsLike}
                   </span>
                   °
                 </div>

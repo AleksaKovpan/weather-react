@@ -1,31 +1,28 @@
 import React, { useState } from "react";
 import "./City.css";
-
 import axios from "axios";
+import WeatherInfo from "./WeatherInfo";
 
-
-import WeatherInfo from "./WeatherInfo"
-export default function City() {
+export default function City(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
-  const [city, setCity] = useState(null);
+  const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
       setWeatherData({
-      ready: true,
-      temperature: Math.round(response.data.temperature.current),
-      temperatureFeelsLike: Math.round(response.data.temperature.feels_like),
-      description: response.data.condition.description,
-      wind: Math.round(response.data.wind.speed),
-      humidity: response.data.temperature.humidity,
-      city: response.data.city,
-      icon: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
-      date: new Date(),
-    });
+        ready: true,
+        temperature: Math.round(response.data.temperature.current),
+        temperatureFeelsLike: Math.round(response.data.temperature.feels_like),
+        description: response.data.condition.description,
+        wind: Math.round(response.data.wind.speed),
+        humidity: response.data.temperature.humidity,
+        city: response.data.city,
+        icon: response.data.condition.icon,
+        date: new Date(),
+      });
   }
 
   function search() {
     const apiKey = "bd79ao40tde3dec118ca46bc3e6dd55f";
-    let city = "Lviv";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
@@ -39,13 +36,14 @@ export default function City() {
   function handleCityChange(event) {
     setCity(event.target.value);
   }
+
   if (weatherData.ready) {
     return (
       <div className="City">
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            placeholder="Enter city"
+            placeholder="Enter city..."
             className="search"
             onChange={handleCityChange}
           />
@@ -54,8 +52,7 @@ export default function City() {
         </form>
 
         <WeatherInfo data={weatherData} />
-      </div>
-    );
+      </div>);
   } else {
     search();
     return "Loading...";
