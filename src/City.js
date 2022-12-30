@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./City.css";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
+import { MagnifyingGlass } from "react-loader-spinner";
 
 export default function City(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -56,6 +57,17 @@ export default function City(props) {
       </div>);
   } else {
     search();
-    return "Loading...";
+    return (
+      <MagnifyingGlass
+        visible={true}
+        height="80"
+        width="80"
+        ariaLabel="MagnifyingGlass-loading"
+        wrapperStyle={{}}
+        wrapperClass="MagnifyingGlass-wrapper"
+        glassColor="#c0efff"
+        color="#e15b64"
+      />
+    );
   }
 }
