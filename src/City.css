@@ -85,7 +85,9 @@ form {
   font-size: 18px;
   top: -18px;
 }
-
+.changeUnit{
+  text-decoration: none;
+}
 .current-icon {
   font-size: 96px;
   text-align: center;
