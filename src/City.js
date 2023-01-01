@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./City.css";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
-import { MagnifyingGlass } from "react-loader-spinner";
+import { ColorRing } from "react-loader-spinner";
 
 export default function City(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -18,7 +18,7 @@ export default function City(props) {
         wind: Math.round(response.data.wind.speed),
         humidity: response.data.temperature.humidity,
         city: response.data.city,
-        icon: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
+        icon: response.data.condition.icon,
         date: new Date(),
       });
   }
@@ -58,15 +58,14 @@ export default function City(props) {
   } else {
     search();
     return (
-      <MagnifyingGlass
+      <ColorRing
         visible={true}
         height="80"
         width="80"
-        ariaLabel="MagnifyingGlass-loading"
+        ariaLabel="blocks-loading"
         wrapperStyle={{}}
-        wrapperClass="MagnifyingGlass-wrapper"
-        glassColor="#c0efff"
-        color="#e15b64"
+        wrapperClass="blocks-wrapper"
+        colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
       />
     );
   }

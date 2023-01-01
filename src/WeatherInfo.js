@@ -3,6 +3,7 @@ import CurrentDate from "./CurrentDate";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTemperatureThreeQuarters } from "@fortawesome/free-solid-svg-icons";
 import { faMapPin } from "@fortawesome/free-solid-svg-icons";
+import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherInfo(props) {
     return (
@@ -35,9 +36,13 @@ export default function WeatherInfo(props) {
             </div>
           </div>
           <div className="col-sm-4">
-            {/* <img src="" alt="cloudy" className="weather-icon" /> */}
             <div className="current-icon">
-              <img src={props.data.icon} alt={props.data.description} />
+              <WeatherIcon
+                code={props.data.icon}
+                description={props.data.description}
+                size={200}
+              />
+              {/* <img src={props.data.icon} alt={props.data.description} /> */}
             </div>
             <div className="weather-description"> {props.data.description}</div>
           </div>
