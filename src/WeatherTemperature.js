@@ -31,7 +31,7 @@ export default function WeatherTemperature(props) {
     );
   } else {
     let fahrenheit = (props.celsius * 9) / 5 + 32;
-
+let fahrenheitFeelsLike = (props.celsiusFeelsLike * 9) / 5 + 32;
     return (
       <span className="WeatherTemperature">
         <span className="current-temp-value"> {Math.round(fahrenheit)}</span>
@@ -43,7 +43,10 @@ export default function WeatherTemperature(props) {
         </span>
         <div className="current-temp-value-feeling">
           feels like{" "}
-          <span className="temp-value-feeling">{props.celsiusFeelsLike}</span>°
+          <span className="temp-value-feeling">
+            {Math.round(fahrenheitFeelsLike)}
+          </span>
+          °
         </div>
       </span>
     );

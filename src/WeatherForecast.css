@@ -1,0 +1,11 @@
+.WeatherForecast{
+    text-align: center;
+}
+.WeatherForecast-day {
+    color: white;
+    font-weight: 400;
+}
+.WeatherForecast-temperature{
+     color: white;
+    font-weight: 400;
+}

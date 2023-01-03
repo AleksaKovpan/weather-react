@@ -3,6 +3,7 @@ import "./City.css";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 import { ColorRing } from "react-loader-spinner";
+import WeatherForecast from "./WeatherForecast";
 
 export default function City(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -54,7 +55,9 @@ export default function City(props) {
         </form>
 
         <WeatherInfo data={weatherData} />
-      </div>);
+        <WeatherForecast data={weatherData} />
+      </div>
+    );
   } else {
     search();
     return (
@@ -65,7 +68,7 @@ export default function City(props) {
         ariaLabel="blocks-loading"
         wrapperStyle={{}}
         wrapperClass="blocks-wrapper"
-        colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
+        colors={["#fafafa", "#ffe9e3", "#c4c1e0", "#7c73e6"]}
       />
     );
   }
