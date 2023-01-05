@@ -39,7 +39,7 @@ export default function WeatherInfo(props) {
           </div>
           <div className="weather-description"> {props.data.description}</div>
         </div>
-        <div className="col-sm-4">
+        <div className="col-sm-4 weather-detail">
           <div className="weather-detail-item">
             <div className="weather-description-item">Wind</div>
             <span className="weather-detail-icon">💨</span>

@@ -54,8 +54,12 @@ form {
 .unDrawImage {
   width: 200px;
   position: relative;
-  left: 480px;
+  left: 500px;
   top: -70px;
+}
+
+.WeatherInfo {
+  margin-top: -50px;
 }
 
 .fa-map-pin {
@@ -92,16 +96,14 @@ form {
   font-size: 18px;
   top: -18px;
 }
-.changeUnit{
+.changeUnit {
   text-decoration: none;
 }
 .current-icon {
   font-size: 96px;
   text-align: center;
 }
-/* .weather-icon {
-  width: 350px;
-} */
+
 .weather-description {
   text-transform: capitalize;
   text-align: center;
@@ -112,6 +114,9 @@ form {
   /* left: 5px; */
 }
 
+.weather-detail {
+  padding-top: 20px;
+}
 .weather-detail-item {
   color: #fff;
   padding-top: 20px;

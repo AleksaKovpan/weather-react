@@ -4,6 +4,7 @@ import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 import { ColorRing } from "react-loader-spinner";
 import WeatherForecast from "./WeatherForecast";
+import undraw_weather from "./icons/undraw_weather.svg";
 
 export default function City(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -71,7 +72,10 @@ export default function City(props) {
             onClick={getCurrentLocation}
           />
         </form>
-<span className="unDrawImage"><img src="/icon/"/></span>
+        <div className="unDrawImage">
+          {" "}
+          <img src={undraw_weather} alt="" width={150} />
+        </div>
         <WeatherInfo data={weatherData} />
         <WeatherForecast
           data={weatherData}
