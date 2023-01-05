@@ -51,6 +51,13 @@ form {
   box-shadow: 1px 5px 5px #868588;
 }
 
+.unDrawImage {
+  width: 200px;
+  position: relative;
+  left: 480px;
+  top: -70px;
+}
+
 .fa-map-pin {
   font-size: 24px;
   color: rgb(9, 162, 189);
@@ -100,8 +107,8 @@ form {
   text-align: center;
   color: #fff;
   font-size: 28px;
-  /* position: relative;
-  top: -70px; */
+  position: relative;
+  top: -25px;
   /* left: 5px; */
 }
 

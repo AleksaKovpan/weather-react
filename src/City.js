@@ -71,7 +71,7 @@ export default function City(props) {
             onClick={getCurrentLocation}
           />
         </form>
-
+<span className="unDrawImage"><img src="/icon/"/></span>
         <WeatherInfo data={weatherData} />
         <WeatherForecast
           data={weatherData}
