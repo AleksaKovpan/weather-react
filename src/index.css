@@ -14,3 +14,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* @media (max-width: 576px) {
+  body{
+    background-image: url(https://images.pexels.com/photos/2100002/pexels-photo-2100002.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    
+      }
+} */

@@ -10,9 +10,9 @@
   margin-top: 50px;
   }
 .wrapper {
-  /* background: linear-gradient(to bottom, #30cfd0 0%, #330867 100%); */
-  background-image: url(https://images.pexels.com/photos/2100002/pexels-photo-2100002.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
- 
+    background-image: url(https://images.pexels.com/photos/2100002/pexels-photo-2100002.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+ background-size: cover;
+  background-repeat: no-repeat;
   max-width: 800px;
   margin: 0 auto;
   padding: 20px 60px 10px 60px;
@@ -44,4 +44,16 @@
 
 .day-temperature {
   color: #fff;
+}
+@media(max-width: 576px){
+  
+  .wrapper{
+  
+    max-height: 100%;
+    text-align: center;
+    
+  }
+   .conteiner {
+  max-width: 100%;
+margin-top: 0px;}
 }

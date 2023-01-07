@@ -1,8 +1,6 @@
 form {
   margin-top: 30px;
-  position: relative;
-  z-index: 1;
-}
+ }
 .search {
   width: 40%;
   height: 42px;
@@ -62,6 +60,11 @@ form {
   margin-top: -50px;
 }
 
+.current-temp{
+  color:  white;
+ 
+}
+
 .fa-map-pin {
   font-size: 24px;
   color: rgb(9, 162, 189);
@@ -77,10 +80,6 @@ form {
 }
 
 .current-city-temp {
-  width: 160px;
-  /* position: relative;
-  top: -100px;
-  left: 10px; */
   color: #fff;
 }
 .current-temp {
@@ -140,3 +139,33 @@ form {
   position: relative;
   left: 50px;
 }
+@media(max-width: 576px) {
+  form {
+  margin-top: 10px;
+ }
+ .current-city{
+font-size: 60px;
+ }
+ .WeatherInfo{
+  position: relative;
+  top: 60px;
+ }
+    .unDrawImage{
+      display: none;
+    }
+    .weather-detail-item{
+  display: inline-block;
+  }
+.wind{
+ position: relative;
+ right: 70px;
+}
+.weather-detail {
+  position: relative;
+  top: -70px;
+  left: -20px;
+  }
+.weather-description{
+  top: -50px;
+}
+ }

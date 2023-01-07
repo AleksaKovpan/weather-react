@@ -93,7 +93,7 @@ export default function City(props) {
         ariaLabel="blocks-loading"
         wrapperStyle={{}}
         wrapperClass="blocks-wrapper"
-        colors={["#fafafa", "#ffe9e3", "#c4c1e0", "#7c73e6"]}
+        colors={["#fafafa", "#ffe9e3", "#c4c1e0", "#7c73e6", "#5d5a7d"]}
       />
     );
   }

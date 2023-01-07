@@ -18,3 +18,16 @@
     box-shadow: 2px 2px 8px #F7F5F4, 0 0 2px #F7F5F4;;
     border-radius: 5px;
 } 
+
+@media (max-width: 576px) {
+    .WeatherForecast{
+        position: relative;
+        top: 10px;
+    }
+    .WeatherForecastDay{
+        box-shadow: 2px 2px 8px #F7F5F4, 0 0 2px #F7F5F4;;
+    border-radius: 5px;
+    }
+         
+    
+       }
